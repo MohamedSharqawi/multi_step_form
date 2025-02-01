@@ -33,7 +33,7 @@ Users should be able to:
 
 ### Screenshot
 
-![A screenshot of my solution](./design/screenshot.png)
+![A screenshot of my solution](https://postimg.cc/fkfzfFJF)
 
 ### Links
 
