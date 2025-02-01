@@ -1,0 +1,36 @@
+@mixin sectionTitle {
+    font-family: 'Ubuntu-bld';
+    font-size: 2rem;
+    color: var(--marine-blue);
+}
+
+@mixin sectionDesc {
+    color: var(--cool-gray);
+    font-family: 'Ubuntu-reg';
+    margin: 10px 0;
+}
+
+@mixin inputGroup {
+    display: flex;
+    gap: 20px;
+    margin-top: 35px;
+}
+
+@mixin inputTitle {
+    font-family: 'Ubuntu-reg';
+    font-size: clamp(0.92rem, 1.3vw, 1rem);
+    color: var(--marine-blue);
+    margin-bottom: 5px;
+}
+
+@mixin inputDesc {
+    font-family: 'Ubuntu-med';
+    font-size: clamp(0.85rem, 1.3vw, 1rem);
+    color: var(--cool-gray);
+}
+
+@mixin breakpoint-down($width) {
+    @media only screen and (max-width: $width) {
+        @content;
+    }
+}

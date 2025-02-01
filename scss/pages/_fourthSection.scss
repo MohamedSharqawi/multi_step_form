@@ -1,0 +1,95 @@
+@use "../layout/mixins" as *;
+
+.rightPrt__finish {
+    padding: 20px;
+    @include breakpoint-down(780px) {
+        padding: 5px
+    }
+
+    &__title {
+        @include sectionTitle;
+    }
+
+    &__desc {
+        @include sectionDesc;
+    }
+
+    &__box {
+        background-color: hsla(243, 100%, 62%, 0.04);
+        flex-direction: column;
+        padding: 10px 25px;
+        margin-top: 30px;
+        border-radius: 10px;
+        @include breakpoint-down(780px) {
+            padding: 10px 15px;
+        }
+    }
+    
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+
+        &:first-child {
+            padding-bottom: 22px;
+            border-bottom: 2px solid hsl(231deg 11% 63% / 30%);
+            margin-bottom: 10px;
+        }
+
+        &:not(:first-child) {
+            .add {
+                font-family: 'Ubuntu-med';
+                font-size: 0.95rem;
+                color: var(--cool-gray);
+            }
+
+            .cost {
+                font-family: 'Ubuntu-med';
+                font-size: 0.9rem;
+                color: var(--marine-blue);
+            }
+        }
+    }
+
+    &__plan {
+        @include inputTitle;
+    }
+
+    &__change {
+        @include inputDesc;
+        background-color: transparent;
+        text-decoration: 1px underline;
+        cursor: pointer;
+
+        &:hover {
+            color: var(--marine-blue);
+        }
+    }
+
+    &__cost {
+        font-family: 'Ubuntu-bld';
+        font-size: 1rem;
+        color: var(--marine-blue);
+    }
+
+    &__total {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+        padding: 10px 25px;
+
+        &__txt {
+            font-family: 'Ubuntu-med';
+            font-size: 0.9;
+            color: var(--cool-gray);
+        }
+
+        &__cost {
+            font-size: 1.2rem;
+            font-family: 'Ubuntu-bld';
+            color: var(--purplish-blue);
+        }
+    }
+}

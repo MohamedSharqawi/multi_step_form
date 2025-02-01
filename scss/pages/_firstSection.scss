@@ -1,0 +1,62 @@
+@use "../layout/mixins" as *;
+
+.rightPrt__infoSection {
+    padding: 20px;
+    @include breakpoint-down(780px) {
+        padding: 5px
+    }
+
+    &__title {
+        @include sectionTitle;
+    }
+    
+    &__desc {
+        @include sectionDesc;
+    }
+
+    &__inputGrp {
+        @include inputGroup;
+        flex-direction: column;
+    }
+
+    &__formItem:has(input.error) input {
+        border-color: var(--strawberry-red);
+    }
+
+    &__txt {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.9rem;
+    }
+
+    &__label {
+        font-family: 'Ubuntu-med';
+        color: var(--marine-blue);
+    }
+
+    &__error {
+        font-family: 'Ubuntu-bld';
+        color: var(--strawberry-red);
+    }
+
+    &__input {
+        font-family: 'Ubuntu-med';
+        font-size: 1rem;
+        width: 100%;
+        height: 45px;
+        color: var(--marine-blue);
+        border: 2px solid var(--light-gray);
+        padding-left: 18px;
+        margin-top: 10px;
+        border-radius: 7px;
+        outline: none;
+
+        &::placeholder {
+            color: var(--cool-gray);
+        }
+
+        &:focus {
+            border-color: var(--purplish-blue);
+        }
+    }
+}

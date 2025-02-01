@@ -1,0 +1,127 @@
+@use "../layout/mixins" as *;
+
+.rightPrt__planSection {
+    padding: 20px;
+    @include breakpoint-down(780px) {
+        padding: 5px
+    }
+
+    &__title {
+        @include sectionTitle;
+    }
+
+    &__desc {
+        @include sectionDesc;
+    }
+
+    &__inputGrp {
+        @include inputGroup;
+        @include breakpoint-down(900px) {
+            flex-direction: column;
+        }
+    }
+
+    &__planItem {
+        flex: 1;
+        border: 1px solid var(--light-gray);
+        border-radius: 8px;
+        padding: 15px;
+        cursor: pointer;
+        @include breakpoint-down(900px) {
+            display: flex;
+            gap: 15px;
+        }
+
+        &:has(input:checked) {
+            border-color: var(--purplish-blue);
+            background-color: hsla(243, 100%, 62%, 0.05);
+        }
+        
+        &:hover {
+            border-color: var(--purplish-blue);
+        }
+
+        &.yearly p:last-child {
+            display: block !important;
+        }
+
+        &__title {
+            @include inputTitle;
+            margin-top: 35px;
+            @include breakpoint-down(900px) {
+                margin: 0
+            }
+        }
+        
+        &__inputPrice {
+            @include inputDesc;
+        }
+    
+        &__freeMonths {
+            font-family: "Ubuntu-med";
+            font-size: 0.85rem;
+            color: var(--marine-blue);
+            margin-top: 8px;
+            display: none;
+        }
+    }
+
+    &__timeline {
+        height: 50px;
+        font-family: 'Ubuntu-med';
+        background-color: hsl(229deg 24% 87% / 25%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        margin-top: 40px;
+        border-radius: 8px;
+
+        &:has(div.checked) {
+            .rightPrt__planSection__timeline__monthly {
+                color: var(--cool-gray);
+            }
+
+            .rightPrt__planSection__timeline__yearly {
+                color: var(--marine-blue);
+            }
+        }
+
+        &__monthly {
+            color: var(--marine-blue);
+        }
+
+        &__change {
+            width: 38px;
+            height: 20px;
+            background-color: var(--marine-blue);
+            border-radius: 12px;
+            position: relative;
+            cursor: pointer;
+
+            &::after {
+                content: "";
+                background-color: var(--white);
+                width: 14px;
+                height: 14px;
+                position: absolute;
+                top: 50%;
+                left: 4px;
+                border-radius: 50%;
+                transform: translateY(-50%);
+                transition: 0.3s ease-in-out;
+            }
+            
+            &.checked {
+                &::after {
+                    left: calc(100% - 4px);
+                    transform: translateY(-50%) translateX(-100%);
+                }
+            }
+        }
+
+        &__yearly {
+            color: var(--cool-gray);
+        }
+    }
+}

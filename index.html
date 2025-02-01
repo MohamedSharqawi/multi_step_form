@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" href="assets/images/favicon-32x32.png" type="image/x-icon">
+        <title>Multi-step Form Validation</title>
+    </head>
+    <body>
+        <main class="main">
+            <ul class="leftPrt">
+                <li class="leftPrt__step">
+                    <p class="leftPrt__currentNumber">1</p>
+                    <div class="leftPrt__grp">
+                        <p class="leftPrt__currentStep">Step 1</p>
+                        <strong class="leftPrt__stepTitle">Your Info</strong>
+                    </div>
+                </li>
+                <li class="leftPrt__step">
+                    <p class="leftPrt__currentNumber">2</p>
+                    <div class="leftPrt__grp">
+                        <p class="leftPrt__currentStep">Step 2</p>
+                        <strong class="leftPrt__stepTitle">Select Plan</strong>
+                    </div>
+                </li>
+                <li class="leftPrt__step">
+                    <p class="leftPrt__currentNumber">3</p>
+                    <div class="leftPrt__grp">
+                        <p class="leftPrt__currentStep">Step 3</p>
+                        <strong class="leftPrt__stepTitle">Add-ons</strong>
+                    </div>
+                </li>
+                <li class="leftPrt__step">
+                    <p class="leftPrt__currentNumber">4</p>
+                    <div class="leftPrt__grp">
+                        <p class="leftPrt__currentStep">Step 4</p>
+                        <strong class="leftPrt__stepTitle">Summary</strong>
+                    </div>
+                </li>
+            </ul>
+
+
+            <form class="rightPrt" onkeydown="if(event.keyCode === 13) {return false;}">
+                <div class="rightPrt__container">
+                    <div class="rightPrt__content">
+                        <section class="rightPrt__infoSection" id="one">
+                            <h2 class="rightPrt__infoSection__title">Personal info</h2>
+                            <p class="rightPrt__infoSection__desc">Please provide your name, email address, and phone number.</p>
+                            <div class="rightPrt__infoSection__inputGrp">
+                                <div class="rightPrt__infoSection__formItem">
+                                    <div class="rightPrt__infoSection__txt"><label for="name" class="rightPrt__infoSection__label">Name</label><p class="rightPrt__infoSection__error"></p></div>
+                                    <input type="text" class="rightPrt__infoSection__input" id="name" placeholder="e.g. Stephen King">
+                                </div>
+                                <div class="rightPrt__infoSection__formItem">
+                                    <div class="rightPrt__infoSection__txt"><label for="mail" class="rightPrt__infoSection__label">Email Address</label><p class="rightPrt__infoSection__error"></p></div>
+                                    <input type="text" class="rightPrt__infoSection__input" id="mail" placeholder="e.g. stephenking@lorem.com">
+                                </div>
+                                <div class="rightPrt__infoSection__formItem">
+                                    <div class="rightPrt__infoSection__txt"><label for="phone" class="rightPrt__infoSection__label">Phone Number</label><p class="rightPrt__infoSection__error"></p></div>
+                                    <input type="text" class="rightPrt__infoSection__input" id="phone" placeholder="e.g. +1 234 567 890">
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="rightPrt__planSection" id="two">
+                            <h2 class="rightPrt__planSection__title">Select your plan</h2>
+                            <p class="rightPrt__planSection__desc">You have the option of monthly or yearly billing.</p>
+                            <div class="rightPrt__planSection__inputGrp">
+                                <label for="arcade" class="rightPrt__planSection__planItem" tabindex="0">
+                                    <input type="radio" name="plan" id="arcade" value="9" checked hidden>
+                                    <img src="./assets/images/icon-arcade.svg" alt="Arcade Icon.">
+                                    <div class="rightPrt__planSection__txtGrp">
+                                        <h3 class="rightPrt__planSection__planItem__title">Arcade</h3>
+                                        <p class="rightPrt__planSection__planItem__inputPrice">$9/mo</p>
+                                        <p class="rightPrt__planSection__planItem__freeMonths">2 months free</p>
+                                    </div>
+                                </label>
+                                <label for="advanced" class="rightPrt__planSection__planItem" tabindex="0">
+                                    <input type="radio" name="plan" id="advanced" value="12" hidden>
+                                    <img src="./assets/images/icon-advanced.svg" alt="Advanced Icon.">
+                                    <div class="rightPrt__planSection__txtGrp">
+                                        <h3 class="rightPrt__planSection__planItem__title">Advanced</h3>
+                                        <p class="rightPrt__planSection__planItem__inputPrice">$12/mo</p>
+                                        <p class="rightPrt__planSection__planItem__freeMonths">2 months free</p>
+                                    </div>
+                                </label>
+                                <label for="pro" class="rightPrt__planSection__planItem" tabindex="0">
+                                    <input type="radio" name="plan" id="pro" value="15" hidden>
+                                    <img src="./assets/images/icon-pro.svg" alt="Pro Icon.">
+                                    <div class="rightPrt__planSection__txtGrp">
+                                        <h3 class="rightPrt__planSection__planItem__title">Pro</h3>
+                                        <p class="rightPrt__planSection__planItem__inputPrice">$15/mo</p>
+                                        <p class="rightPrt__planSection__planItem__freeMonths">2 months free</p>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="rightPrt__planSection__timeline" tabindex="0">
+                                <p class="rightPrt__planSection__timeline__monthly">Monthly</p>
+                                <div class="rightPrt__planSection__timeline__change" id="timeline"></div>
+                                <p class="rightPrt__planSection__timeline__yearly">Yearly</p>
+                            </div>
+                        </section>
+
+                        <section class="rightPrt__addSection" id="three">
+                            <h2 class="rightPrt__addSection__title">Pick add-ons</h2>
+                            <p class="rightPrt__addSection__desc">Add-ons help enhance your gaming experience.</p>
+                            <div class="rightPrt__addSection__inputGrp">
+                                <label for="online-service" class="rightPrt__addSection__row" tabindex="0">
+                                    <input type="checkbox" id="online-service" value="1" tabindex="-1">
+                                    <div class="rightPrt__addSection__txtGrp">
+                                        <h3 class="rightPrt__addSection__inputTitle">Online service</h3>
+                                        <p class="rightPrt__addSection__inputDesc">Access to multiplayer games</p>
+                                    </div>
+                                    <p class="rightPrt__addSection__inputPrice">+$1/mo</p>
+                                </label>
+                                <label for="larger-storage" class="rightPrt__addSection__row" tabindex="0">
+                                    <input type="checkbox" id="larger-storage" value="2" tabindex="-1">
+                                    <div class="rightPrt__addSection__txtGrp">
+                                        <h3 class="rightPrt__addSection__inputTitle">Larger storage</h3>
+                                        <p class="rightPrt__addSection__inputDesc">Extra 1TB of cloud save</p>
+                                    </div>
+                                    <p class="rightPrt__addSection__inputPrice">+$2/mo</p>
+                                </label>
+                                <label for="customize-profile" class="rightPrt__addSection__row" tabindex="0">
+                                    <input type="checkbox" id="customize-profile" value="2" tabindex="-1">
+                                    <div class="rightPrt__addSection__txtGrp">
+                                        <h3 class="rightPrt__addSection__inputTitle">Customizable profile</h3>
+                                        <p class="rightPrt__addSection__inputDesc">Custom theme on your profile</p>
+                                    </div>
+                                    <p class="rightPrt__addSection__inputPrice">+$2/mo</p>
+                                </label>
+                            </div>
+                        </section>
+
+                        <section class="rightPrt__finish" id="four">
+                            <h2 class="rightPrt__finish__title">Finishing Up</h2>
+                            <p class="rightPrt__finish__desc">Double-check everything looks OK before confirming</p>
+                            <ul class="rightPrt__finish__box">
+                                <li class="rightPrt__finish__item">
+                                    <div class="rightPrt__finish__txtGrp">
+                                        <h3 class="rightPrt__finish__plan" id="finishup-plan-title">Arcade (Monthly)</h3>
+                                        <button class="rightPrt__finish__change" id="change-plan">Change</button>
+                                    </div>
+                                    <p class="rightPrt__finish__cost" id="finishup-plan-cost">$9/mo</p>
+                                </li>
+                            </ul>
+                            <div class="rightPrt__finish__total">
+                                <p class="rightPrt__finish__total__txt"></p>
+                                <p class="rightPrt__finish__total__cost"></p>
+                            </div>
+                        </section>
+
+                    </div>
+                    <nav class="rightPrt__arrows navigation-arrows">
+                        <button type="submit" class="rightPrt__arrows__previous navigation-go-back">Go Back</button>
+                        <button type="submit" class="rightPrt__arrows__next navigation-go-forward">Next Step</button>
+                        <button type="submit" class="rightPrt__arrows__confirm navigation-confirm">Confirm</button>
+                    </nav>
+                </div>
+            </form>
+
+            <div class="thanksMsg" id="thank-you" hidden>
+                <div class="thanksMsg__container">
+                    <img src="./assets/images/icon-thank-you.svg" alt="Thank you Icon">
+                    <h2 class="thanksMsg__title">Thank You!</h2>
+                    <p class="thanksMsg__desc">Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please feel free to email us at support@loremgaming.com.</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- This will show in mobile screens in the bottom of the screen -->
+        <nav class="externalArrows navigation-arrows">
+            <button type="submit" class="externalArrows__previous navigation-go-back">Go Back</button>
+            <button type="submit" class="externalArrows__next navigation-go-forward">Next Step</button>
+            <button type="submit" class="externalArrows__confirm navigation-confirm">Confirm</button>
+        </nav>
+
+        <script src="main.js"></script>
+    </body>
+</html>

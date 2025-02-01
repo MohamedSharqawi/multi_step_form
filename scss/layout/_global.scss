@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+img {
+    display: block;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+}
+
+button {
+    display: block;
+    font-size: 1rem;
+    font-family: 'Ubuntu-med';
+    border: none;
+}
+
+.hidden {
+    display: none !important;
+}
